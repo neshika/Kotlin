@@ -12,6 +12,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.myapplication.ui.theme.MyApplicationTheme
+import android.view.View
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,6 +27,12 @@ class MainActivity : ComponentActivity() {
                     )
                 }
             }
+        }
+        setContentView(R.layout.activity_main)
+        // Устанавливаем слушатель на кнопку
+        findViewById<View>(R.id.buttonRed)?.setOnClickListener {
+            // Меняем цвет фона на красный
+            window.decorView.setBackgroundColor(getColor(R.color.red))
         }
     }
 }
